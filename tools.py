@@ -16,11 +16,7 @@ def compute_sketch_(X, l, sampling_method='uniform'):
              Y = Omega.dot(X) 
         return Y 
 
-
-
-
 def error_metric_(u, s, vt, shat, vthat, k=1, metric = 'singular_values'):
-    
     if metric == 'singular_values':
         return np.abs(s[(k-1)]-shat[(k-1)])
     elif metric == 'left_singular_vectors':
@@ -32,20 +28,10 @@ def error_metric_(u, s, vt, shat, vthat, k=1, metric = 'singular_values'):
         z = np.sqrt(z)
         return z
 
-
 def partial_svd_(X, k):
-    
     u, s, vt = svds(X, k)
-
     if k>1:
-        # reverse the n first columns of u
         u[ : , :k ] = u[ : , k-1::-1 ]
-        # reverse s
         s = s[ ::-1 ]
-        # reverse the n first rows of vt
         vt[ :k , : ] = vt[ k-1::-1 , : ] 
-        
     return u, s, vt
-
-
-
