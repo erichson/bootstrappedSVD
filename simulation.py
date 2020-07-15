@@ -106,11 +106,11 @@ if __name__ == "__main__":
     #
     parser.add_argument('--name', type=str, default='simulation')
     #
-    parser.add_argument('--samples', type=int, nargs='+', default=[500, 700, 900, 1500, 2000, 3000])
+    parser.add_argument('--samples', type=int, nargs='+', default=[500, 700, 900, 1500, 2000, 3000, 5000, 7000, 10000])
     #
-    parser.add_argument('--runs', type=int, default=120)
+    parser.add_argument('--runs', type=int, default=160)
     #
-    parser.add_argument('--boots', type=int, default=30)
+    parser.add_argument('--boots', type=int, default=40)
     #
     parser.add_argument('--alpha', type=float, default=0.1)
     #

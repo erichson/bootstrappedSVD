@@ -5,9 +5,9 @@ This allows the user to inspect the quality of a rough initial sketched Singular
 To demonstrate the idea, we generate a synthetic matrix which is characterized by a low effective rank.
 ```
 from sketchedSVD import *
-from genTestMatrix import *         
+from genTestMatrix import *
 
-X = matrixPolyDecay(m=100000, n=3000, beta=1)    
+X = matrixPolyDecay(m=100000, n=3000, beta=1)
 ``` 
 Here, `X` is a tall and skinny matrix which features a polynomially decaying spectrum. (Generating the data will take a little while...)
 
@@ -32,16 +32,16 @@ Next, we use the results to extrapolate (forecast) the error as a function of th
 svd.error_estimation_plot(alpha=0.1, interval=[500,10000])
 ```
 You will generate the following plot which tells you that you can roughly reduce the error by a factor of 2 if you sample 4% to 6% of the rows. 
-Further, we see that increasing the sketch even further has a diminishing return in terms of the approximation accuracy.  
+Further, we see that increasing the sketch even further has a diminishing return in terms of the approximation accuracy.
 
-<img src="https://github.com/erichson/bootstrappedSVD/blob/master/plots/eestimate.png" width="800">
+<img src="https://github.com/erichson/bootstrappedSVD/blob/master/plots/eestimate.png" width="650">
 
 
 You don't believe that these error estimates are accurate? Well, you can verify that the extrapolated errors are actually pretty accurate by running the following simulation
 ```
 exec(open('simulation.py').read())
 ```
-<img src="https://github.com/erichson/bootstrappedSVD/blob/master/plots/simulation.png" width="800">
+<img src="https://github.com/erichson/bootstrappedSVD/blob/master/plots/simulation.png" width="650">
 
 Our paper provides many more details, experimental results and theoretical guarantees for the proposed bootstrap method.
 
