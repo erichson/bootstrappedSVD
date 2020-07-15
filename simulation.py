@@ -67,8 +67,8 @@ def plot_results(indx, alpha):
     clevel = 1-alpha
     
     plt.figure(figsize=(8,4))
-    plt.plot(samples[indx::], qunatile_e[indx::], 'k--', lw=4, label='true %1.2f-quantile' %clevel)    
-    plt.plot(samples[indx::], quantiles_star_mean[indx::], lw=4,
+    plt.plot(samples[indx::], qunatile_e[indx::], 'k--s', lw=4, label='true %1.2f-quantile' %clevel)    
+    plt.plot(samples[indx::], quantiles_star_mean[indx::], '-o', lw=4,
              color='#3182bd', label='avg. bootstrap quantile')
 
     samples_inter = np.arange(samples[indx], samples[-1], 1)
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser(description='Bootstrap Simulation')
     #
-    parser.add_argument('--name', type=str, default='test')
+    parser.add_argument('--name', type=str, default='simulation')
     #
     parser.add_argument('--samples', type=int, nargs='+', default=[500, 700, 900, 1500, 2000, 3000])
     #
