@@ -35,11 +35,14 @@ svd.error_estimation_plot(alpha=0.1, interval=[500,10000])
 You will generate the following plot which tells you that you can roughly reduce the error by a factor of 2 if you sample 4% to 6% of the rows. 
 Further, we see that increasing the sketch even further has a diminishing return in terms of the approximation accuracy.  
 
+<img src="https://github.com/erichson/bootstrappedSVD/blob/master/plots/eestimate.png" width="800">
+
 
 You don't believe that these error estimates are accurate? Well, you can verify that the extrapolated errors are actually pretty accurate by running the following simulation
 ```
 exec(open('simulation.py').read())
 ```
+<img src="https://github.com/erichson/bootstrappedSVD/blob/master/plots/simulation.png" width="800">
 
 Our paper provides many more details, experimental results and theoretical guarantees for the proposed bootstrap method.
 
