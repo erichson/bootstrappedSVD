@@ -106,9 +106,9 @@ if __name__ == "__main__":
     #
     parser.add_argument('--name', type=str, default='test')
     #
-    parser.add_argument('--samples', type=int, nargs='+', default=[500, 900, 1500, 2000, 3000])
+    parser.add_argument('--samples', type=int, nargs='+', default=[500, 700, 900, 1500, 2000, 3000])
     #
-    parser.add_argument('--runs', type=int, default=200)
+    parser.add_argument('--runs', type=int, default=120)
     #
     parser.add_argument('--boots', type=int, default=30)
     #
